@@ -10,7 +10,7 @@ msgField: version | id | method | result | error | params;
 
 version: '"jsonrpc"' ':' STRING;
 
-id: '"id"' ':' NUMBER;
+id: '"id"' ':' (STRING | NUMBER | 'null');
 
 method: '"method"' ':' STRING;
 
@@ -24,7 +24,7 @@ pair: STRING ':' value;
 
 obj: '{' pair (',' pair)* '}' | '{' '}';
 
-errorObj: '{' errorField | (',' errorField)* '}';
+errorObj: '{' errorField (',' errorField)* '}';
 
 errorField: code | message | data;
 
